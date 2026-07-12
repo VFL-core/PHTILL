@@ -42,19 +42,20 @@ export default {
                     <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
-                        <li>
-                            <div class="type-title-sm">Points when completed</div>
-                            <p>{{ score(selected + 1, 100, level.percentToQualify) }}</p>
-                        </li>
-                        <li>
-                            <div class="type-title-sm">ID</div>
-                            <p>{{ level.id }}</p>
-                        </li>
-                        <li>
-                            <div class="type-title-sm">Password</div>
-                            <p>{{ level.password || 'Free to Copy' }}</p>
-                        </li>
-                    </ul>
+    <li>
+        <div class="type-title-sm">Ticks Required</div>
+        <p>{{ level.ticks }}</p>
+    </li>
+    <li>
+        <div class="type-title-sm">ID</div>
+        <p>{{ level.id }}</p>
+    </li>
+    <li>
+        <div class="type-title-sm">Engine Limit</div>
+        <p>{{ level.limit || 'Infinite' }}</p>
+    </li>
+</ul>
+
                     <h2>Records</h2>
                     <p v-if="selected + 1 <= 75"><strong>{{ level.percentToQualify }}%</strong> or better to qualify</p>
                     <p v-else-if="selected +1 <= 150"><strong>100%</strong> or better to qualify</p>
